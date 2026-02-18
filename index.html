@@ -15,6 +15,13 @@ body {
     background-color: #f2f6fb;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 15px;
+    background-color: #f2f6fb;
+}
+
 body::before {
     content: "";
     position: fixed;
@@ -23,25 +30,30 @@ body::before {
     width: 100%;
     height: 100%;
     background: url("watermark.png") center/cover no-repeat;
-    opacity: 0.10;   /* Adjust watermark visibility here */
+    opacity: 0.10;
     z-index: -1;
 }
 
-
 .container {
     max-width: 950px;
+    width: 100%;
     background: rgba(255, 255, 255, 0.95);
-    padding: 30px;
+    padding: 25px;
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.08);
 }
 
+/* HEADINGS */
 h1, h2 {
     text-align: center;
     margin: 0;
 }
 
+h1 { font-size: 22px; }
+h2 { font-size: 18px; }
+
+/* NOTICE + RULES */
 .notice {
     background: #fff3cd;
     padding: 12px;
@@ -58,51 +70,51 @@ h1, h2 {
     text-align: center;
 }
 
+/* WAIVER TEXT */
 .waiver-text {
     font-size: 14px;
-    line-height: 1.9;
+    line-height: 1.8;
     text-align: justify;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .abc-section {
-    margin-left: 30px;
-}
-
-.abc-section p {
-    text-indent: -20px;
     margin-left: 20px;
 }
 
-.room-input { width: 200px; }
-.date-input { width: 200px; }
+.abc-section p {
+    text-indent: -15px;
+    margin-left: 15px;
+}
 
-.participant-row { margin-bottom: 20px; }
+/* INPUTS */
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
 
+/* GRID FOR NAMES */
 .name-grid {
     display: flex;
-    gap: 40px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .name-field {
-    display: flex;
-    flex-direction: column;
+    flex: 1;
+    min-width: 140px;
 }
 
-.name-field input {
-    width: 220px;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+/* GUARDIAN FIELD */
+.participant-row input {
+    width: 100%;
 }
 
-input[type="text"],
-input[type="date"] {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
+/* SIGNATURE */
 .signature-container {
     border: 2px solid #ccc;
     border-radius: 5px;
@@ -111,9 +123,10 @@ input[type="date"] {
 
 canvas {
     width: 100%;
-    height: 200px;
+    height: 180px;
 }
 
+/* BUTTONS */
 button {
     background-color: #007bff;
     color: white;
@@ -133,6 +146,26 @@ button:hover {
     background-color: #dc3545;
     margin-top: 10px;
 }
+
+/* ---------- MOBILE ADJUSTMENTS ---------- */
+@media (max-width: 768px) {
+
+    .container {
+        padding: 18px;
+    }
+
+    h1 { font-size: 18px; }
+    h2 { font-size: 15px; }
+
+    .waiver-text {
+        font-size: 13px;
+    }
+
+    canvas {
+        height: 160px;
+    }
+}
+
 </style>
 </head>
 
@@ -362,3 +395,4 @@ document.getElementById("waiverForm").addEventListener("submit", function(e) {
 
 </body>
 </html>
+

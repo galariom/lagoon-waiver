@@ -95,27 +95,35 @@ select {
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
-}
-
 
 }
+#guest_type,
+#room-input {
+    width: 300px;
+    max-width: 100%;
+}
+
 
 /* GRID FOR NAMES */
 .name-grid {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
 }
 
 .name-field {
     flex: 1;
-    min-width: 140px;
+}
+.participant-row label {
+    display: block;
+    margin-bottom: 12px;
+}
+.participant-row {
+    margin-bottom: 20px;
 }
 
-/* GUARDIAN FIELD */
-.participant-row input {
-    width: 100%;
-}
+
+
 
 /* SIGNATURE */
 .signature-container {
@@ -250,12 +258,12 @@ I understand that this document is correct and that I thoroughly and fully under
 <label>Participant 1</label>
 <div class="name-grid">
 <div class="name-field">
-<input type="text" name="p1_first" style="width:300px; padding:8px; border-radius:5px; border:1px solid #ccc;">
+<input type="text" name="p1_first">
 <small>First Name</small>
 </div>
 
 <div class="name-field">
-<input type="text" name="p1_last" style="width:300px; padding:8px; border-radius:5px; border:1px solid #ccc;">
+<input type="text" name="p1_last">
 <small>Last Name</small>
 </div>
 

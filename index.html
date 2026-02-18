@@ -89,12 +89,7 @@ h2 { font-size: 18px; }
 
 /* INPUTS */
 input[type="text"],
-input[type="date"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+
 }
 
 /* GRID FOR NAMES */
@@ -224,9 +219,21 @@ I understand that this document is correct and that I thoroughly and fully under
 
 <form id="waiverForm" action="https://script.google.com/macros/s/AKfycbxPrMwxryqkpNtZypaFWWLvRfEor2HSA2f40kefIzFaRVQUokT1Mdiw_Br0K49pXYUgFA/exec" method="POST">
 
+<label>Guest Type:</label><br>
+<select name="guest_type" id="guest_type" required>
+    <option value="">Select Guest Type</option>
+    <option value="In-House">In-House Guest</option>
+    <option value="Day-Use">Day Use Guest</option>
+    <option value="Walk-In">Walk-In / Outside Guest</option>
+</select>
 
-<label>Room Number:</label><br>
-<input type="text" name="room" class="room-input">
+<br><br>
+
+
+
+<label>Room Number (Required for In-House Guests Only):</label><br>
+<input type="text" name="room" id="room-input">
+
 
 <h3>Participants Name</h3>
 

@@ -11,13 +11,6 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
-    background-color: #f2f6fb;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
     padding: 15px;
     background-color: #f2f6fb;
 }
@@ -37,23 +30,17 @@ body::before {
 .container {
     max-width: 950px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255,255,255,0.95);
     padding: 25px;
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.08);
 }
 
-/* HEADINGS */
-h1, h2 {
-    text-align: center;
-    margin: 0;
-}
-
+h1, h2 { text-align: center; margin: 0; }
 h1 { font-size: 22px; }
 h2 { font-size: 18px; }
 
-/* NOTICE + RULES */
 .notice {
     background: #fff3cd;
     padding: 12px;
@@ -70,62 +57,23 @@ h2 { font-size: 18px; }
     text-align: center;
 }
 
-/* WAIVER TEXT */
-.waiver-text {
-    font-size: 14px;
-    line-height: 1.8;
-    text-align: justify;
-    margin-bottom: 25px;
-}
-
-.abc-section {
-    margin-left: 20px;
-}
-
-.abc-section p {
-    text-indent: -15px;
-    margin-left: 15px;
-}
-
-/* INPUTS */
-input[type="text"],
-select {
+input[type="text"], select {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
-
 }
-#guest_type,
-#room-input {
+
+#guest_type, #room-input {
     width: 300px;
     max-width: 100%;
 }
 
-
-/* GRID FOR NAMES */
-.name-grid {
-    display: flex;
-    gap: 15px;
-    width: 100%;
+#room-section {
+    margin-top: 15px;
 }
 
-.name-field {
-    flex: 1;
-}
-.participant-row label {
-    display: block;
-    margin-bottom: 12px;
-}
-.participant-row {
-    margin-bottom: 20px;
-}
-
-
-
-
-/* SIGNATURE */
 .signature-container {
     border: 2px solid #ccc;
     border-radius: 5px;
@@ -137,7 +85,6 @@ canvas {
     height: 180px;
 }
 
-/* BUTTONS */
 button {
     background-color: #007bff;
     color: white;
@@ -149,34 +96,12 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
+button:hover { background-color: #0056b3; }
 
 .clear-btn {
     background-color: #dc3545;
     margin-top: 10px;
 }
-
-/* ---------- MOBILE ADJUSTMENTS ---------- */
-@media (max-width: 768px) {
-
-    .container {
-        padding: 18px;
-    }
-
-    h1 { font-size: 18px; }
-    h2 { font-size: 15px; }
-
-    .waiver-text {
-        font-size: 13px;
-    }
-
-    canvas {
-        height: 160px;
-    }
-}
-
 </style>
 </head>
 
@@ -197,42 +122,6 @@ No Food or Beverages, Pet, Shoes/Slippers Permitted Inside the Lagoon.<br>
 STRICTLY NO JUMPING.
 </div>
 
-<div class="waiver-text">
-
-<p>
-In consideration of being allowed to enter into the play area/or participate in any parties at the LAGOON WATERPARKS, the undersigned, on his or her own and on her behalf of the minor identified below, acknowledges, appreciate and agrees that:
-</p>
-
-<p>
-I, for myself, my child or ward sign this Waiver and Assumption of Risk in consideration of the opportunity to use the facility, or to participate in any parties or activities at LAGOON WATERPARKS.
-</p>
-
-<p>
-I, for myself, my child or ward acknowledge and undersigned that there are dangers and risk associated with the activities at/by lagoon waterparks and agree to assume all risk of personal injury.
-</p>
-
-<p>
-I, for myself, my child or ward agree to follow the safety instruction provided and acknowledge that failure to do so may result into accident.
-</p>
-
-<div class="abc-section">
-<p><strong>A.</strong> The resort shall not in any way be held liable for injuries and or accidents that may occur.</p>
-<p><strong>B.</strong> The resort shall be held free and harmless from any liability or damage or injury to the third party who may be occasioned by my intentional and negligent.</p>
-<p><strong>C.</strong> In view of a potential but known danger, I expressly agree to accept a potential risk or harm upon myself and hereby undertake to waive the renounce any claim against the Resort for any accident/s that may come to me during the entire time. I hereby agree that venue for court action shall be in proper courts of Cebu City, exclusively to the exclusion of all other courts.</p>
-</div>
-
-<p>
-I hereby certify that I am over 18years of age; I have carefully read the foregoing covenant not to sue and acknowledge that I understand and agree to all of the above terms and condition. Prior to signing this agreement, I have the opportunity to ask any and all question. I am aware that by signing this, I assume all risks and waive and release all substantial rights I may have and possess.
-</p>
-
-<p>
-I understand that this document is correct and that I thoroughly and fully understand the terms.
-</p>
-
-</div>
-
-<!-- FORM BELOW REMAINS SAME -->
-
 <form id="waiverForm" action="https://script.google.com/macros/s/AKfycbxPrMwxryqkpNtZypaFWWLvRfEor2HSA2f40kefIzFaRVQUokT1Mdiw_Br0K49pXYUgFA/exec" method="POST">
 
 <label>Guest Type:</label><br>
@@ -240,136 +129,14 @@ I understand that this document is correct and that I thoroughly and fully under
     <option value="">Select Guest Type</option>
     <option value="In-House">In-House Guest</option>
     <option value="Day-Use">Day Use Guest</option>
-    <option value="Walk-In">Walk-In / Outside Guest</option>
 </select>
 
-<br><br>
-
-
-
-<label>Room Number (Required for In-House Guests Only):</label><br>
-<input type="text" name="room" id="room-input" pattern="[0-9]+" inputmode="numeric">
-
-
-<h3>Participants Name</h3>
-
-<!-- Participant 1 -->
-<div class="participant-row">
-<label>Participant 1</label>
-<div class="name-grid">
-<div class="name-field">
-<input type="text" name="p1_first">
-<small>First Name</small>
-</div>
-
-<div class="name-field">
-<input type="text" name="p1_last">
-<small>Last Name</small>
-</div>
-
-</div>
-</div>
-
-<!-- Participant 2 -->
-<div class="participant-row">
-<label>Participant 2</label>
-<div class="name-grid">
-<div class="name-field">
-<input type="text" name="p2_first">
-<small>First Name</small>
-</div>
-<div class="name-field">
-<input type="text" name="p2_last">
-<small>Last Name</small>
-</div>
-</div>
-</div>
-
-<!-- Participant 3 -->
-<div class="participant-row">
-<label>Participant 3</label>
-<div class="name-grid">
-<div class="name-field">
-<input type="text" name="p3_first">
-<small>First Name</small>
-</div>
-<div class="name-field">
-<input type="text" name="p3_last">
-<small>Last Name</small>
-</div>
-</div>
-</div>
-
-<!-- Participant 4 -->
-<div class="participant-row">
-<label>Participant 4</label>
-<div class="name-grid">
-<div class="name-field">
-<input type="text" name="p4_first">
-<small>First Name</small>
-</div>
-<div class="name-field">
-<input type="text" name="p4_last">
-<small>Last Name</small>
-</div>
-</div>
+<div id="room-section" style="display:none;">
+    <label>Room Number:</label><br>
+    <input type="text" name="room" id="room-input" pattern="[0-9]+" inputmode="numeric">
 </div>
 
 <br>
-
-<br>
-
-
-<h3>Parent/Guardian of Child (If Minor)</h3>
-
-<p style="font-size:13px; margin-top:-10px;">
-(Required only if any participant is under 18 years old)
-</p>
-
-<div class="participant-row">
-    <label>Full Name</label><br>
-    <input type="text" name="guardian" style="width:300px; padding:8px; border-radius:5px; border:1px solid #ccc;">
-</div>
-
-
-
-
-<br><br>
-
-<p><strong>DATA PRIVACY CONSENT</strong></p>
-
-<p style="font-size:13px; line-height:1.7;">
-In compliance with Republic Act No. 10173, otherwise known as the Data Privacy Act of 2012, I hereby voluntarily and expressly authorize SOLEA MACTAN CEBU RESORT to collect, record, organize, store, update, retrieve, use, consolidate, block, erase, or destroy my personal information provided in this form.
-</p>
-
-<p style="font-size:13px; line-height:1.7;">
-The personal information collected shall be used strictly for legitimate business purposes including safety documentation, incident reporting, guest verification, legal compliance, internal record-keeping, and security monitoring within the premises of the Resort.
-</p>
-
-<p style="font-size:13px; line-height:1.7;">
-I understand that my personal information will be treated with strict confidentiality and will only be accessed by authorized personnel of the Resort. My information shall not be disclosed, shared, or transferred to any third party without my consent except when required by law, regulation, or lawful order of government authorities.
-</p>
-
-<p style="font-size:13px; line-height:1.7;">
-I acknowledge that I have the right to access, correct, update, or request the deletion of my personal data, as well as the right to withdraw my consent, subject to applicable laws and internal policies of the Resort.
-</p>
-
-<br>
-
-<label>
-<input type="checkbox" name="privacy_consent" required>
-I have read, understood, and voluntarily agree to the collection and processing of my personal data in accordance with the Data Privacy Act of 2012.
-</label>
-
-<br><br>
-
-<label>
-<input type="checkbox" name="agreement" required>
-I have carefully read, fully understood, and voluntarily agree to the terms and conditions stated in this Lagoon Waterparks Waiver and Assumption of Risk. I acknowledge that by checking this box and signing below, I am waiving certain legal rights.
-</label>
-
-
-<br><br>
 
 <h3>Digital Signature</h3>
 <div class="signature-container">
@@ -379,18 +146,20 @@ I have carefully read, fully understood, and voluntarily agree to the terms and 
 <button type="button" class="clear-btn" onclick="clearSignature()">Clear Signature</button>
 
 <input type="hidden" name="signature" id="signature-data">
+<input type="hidden" name="timestamp" id="timestamp">
 
 <br><br>
-
 <button type="submit">Submit Waiver</button>
 
 </form>
-
 </div>
 
 <script>
 const canvas = document.getElementById('signature-pad');
 const signaturePad = new SignaturePad(canvas);
+const guestType = document.getElementById("guest_type");
+const roomSection = document.getElementById("room-section");
+const roomInput = document.getElementById("room-input");
 
 function resizeCanvas() {
     const ratio = Math.max(window.devicePixelRatio || 1, 1);
@@ -403,20 +172,40 @@ function resizeCanvas() {
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 
+// Show/Hide Room Number based on Guest Type
+guestType.addEventListener("change", function() {
+    if (this.value === "In-House") {
+        roomSection.style.display = "block";
+        roomInput.setAttribute("required", "required");
+    } else {
+        roomSection.style.display = "none";
+        roomInput.removeAttribute("required");
+        roomInput.value = "";
+    }
+});
+
+// Clear signature
 function clearSignature() {
     signaturePad.clear();
 }
 
+// Submit validation + timestamp capture
 document.getElementById("waiverForm").addEventListener("submit", function(e) {
+
     if (signaturePad.isEmpty()) {
         alert("Please provide your digital signature.");
         e.preventDefault();
         return;
     }
+
+    // Save signature
     document.getElementById("signature-data").value = signaturePad.toDataURL();
+
+    // Capture timestamp (device local time)
+    const now = new Date();
+    document.getElementById("timestamp").value = now.toLocaleString();
 });
 </script>
 
 </body>
 </html>
-

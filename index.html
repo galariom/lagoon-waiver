@@ -29,7 +29,6 @@ body::before {
 
 .container {
     max-width: 950px;
-    width: 100%;
     background: rgba(255,255,255,0.95);
     padding: 25px;
     margin: auto;
@@ -37,70 +36,80 @@ body::before {
     box-shadow: 0 0 20px rgba(0,0,0,0.08);
 }
 
-h1, h2 { text-align: center; margin: 0; }
-h1 { font-size: 22px; }
-h2 { font-size: 18px; }
+h1,h2{text-align:center;margin:0;}
+h1{font-size:22px;}
+h2{font-size:18px;}
 
-.notice {
-    background: #fff3cd;
-    padding: 12px;
-    border-left: 5px solid #ffc107;
-    margin: 20px 0;
-    font-weight: bold;
-    text-align: center;
+.notice{
+    background:#fff3cd;
+    padding:12px;
+    border-left:5px solid #ffc107;
+    margin:20px 0;
+    font-weight:bold;
+    text-align:center;
 }
 
-.rules {
-    color: red;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
+.rules{
+    color:red;
+    font-weight:bold;
+    text-align:center;
+    margin-bottom:20px;
 }
 
-input[type="text"], select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+.waiver-text{
+    font-size:14px;
+    line-height:1.8;
+    text-align:justify;
+    margin-bottom:25px;
 }
 
-#guest_type, #room-input {
-    width: 300px;
-    max-width: 100%;
+input[type="text"], select{
+    width:100%;
+    padding:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    box-sizing:border-box;
 }
 
-#room-section {
-    margin-top: 15px;
+#guest_type,#room-input{
+    width:300px;
+    max-width:100%;
 }
 
-.signature-container {
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    margin-top: 10px;
+.name-grid{
+    display:flex;
+    gap:15px;
 }
 
-canvas {
-    width: 100%;
-    height: 180px;
+.name-field{flex:1;}
+
+.participant-row{margin-bottom:20px;}
+
+.signature-container{
+    border:2px solid #ccc;
+    border-radius:5px;
+    margin-top:10px;
 }
 
-button {
-    background-color: #007bff;
-    color: white;
-    padding: 14px;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-    font-size: 16px;
-    cursor: pointer;
+canvas{width:100%;height:180px;}
+
+button{
+    background:#007bff;
+    color:white;
+    padding:14px;
+    border:none;
+    border-radius:5px;
+    width:100%;
+    font-size:16px;
+    cursor:pointer;
 }
 
-button:hover { background-color: #0056b3; }
+button:hover{background:#0056b3;}
 
-.clear-btn {
-    background-color: #dc3545;
-    margin-top: 10px;
+.clear-btn{background:#dc3545;margin-top:10px;}
+
+@media(max-width:768px){
+    .name-grid{flex-direction:column;}
 }
 </style>
 </head>
@@ -122,21 +131,76 @@ No Food or Beverages, Pet, Shoes/Slippers Permitted Inside the Lagoon.<br>
 STRICTLY NO JUMPING.
 </div>
 
-<form id="waiverForm" action="https://script.google.com/macros/s/AKfycbxPrMwxryqkpNtZypaFWWLvRfEor2HSA2f40kefIzFaRVQUokT1Mdiw_Br0K49pXYUgFA/exec" method="POST">
+<div class="waiver-text">
+<p>In consideration of being allowed to enter and participate at LAGOON WATERPARKS, I acknowledge and agree to assume all risks associated with the activities and voluntarily waive any claims against the Resort for injuries or accidents that may occur.</p>
+<p>I agree to follow all safety instructions provided. Failure to comply may result in accidents or removal from the facility.</p>
+<p>I certify that I am over 18 years old or am the legal guardian of the minor/s listed below and fully understand the terms of this waiver.</p>
+</div>
+
+<form id="waiverForm" action="YOUR_GOOGLE_SCRIPT_URL_HERE" method="POST">
 
 <label>Guest Type:</label><br>
 <select name="guest_type" id="guest_type" required>
-    <option value="">Select Guest Type</option>
-    <option value="In-House">In-House Guest</option>
-    <option value="Day-Use">Day Use Guest</option>
+<option value="">Select Guest Type</option>
+<option value="In-House">In-House Guest</option>
+<option value="Day-Use">Day Use Guest</option>
 </select>
 
-<div id="room-section" style="display:none;">
-    <label>Room Number:</label><br>
-    <input type="text" name="room" id="room-input" pattern="[0-9]+" inputmode="numeric">
+<div id="room-section" style="display:none;margin-top:15px;">
+<label>Room Number:</label><br>
+<input type="text" name="room" id="room-input" pattern="[0-9]+" inputmode="numeric">
 </div>
 
-<br>
+<h3>Participants Name</h3>
+
+<div class="participant-row">
+<label>Participant 1</label>
+<div class="name-grid">
+<div class="name-field"><input type="text" name="p1_first"><small>First Name</small></div>
+<div class="name-field"><input type="text" name="p1_last"><small>Last Name</small></div>
+</div>
+</div>
+
+<div class="participant-row">
+<label>Participant 2</label>
+<div class="name-grid">
+<div class="name-field"><input type="text" name="p2_first"></div>
+<div class="name-field"><input type="text" name="p2_last"></div>
+</div>
+</div>
+
+<div class="participant-row">
+<label>Participant 3</label>
+<div class="name-grid">
+<div class="name-field"><input type="text" name="p3_first"></div>
+<div class="name-field"><input type="text" name="p3_last"></div>
+</div>
+</div>
+
+<div class="participant-row">
+<label>Participant 4</label>
+<div class="name-grid">
+<div class="name-field"><input type="text" name="p4_first"></div>
+<div class="name-field"><input type="text" name="p4_last"></div>
+</div>
+</div>
+
+<h3>Parent/Guardian (If Minor)</h3>
+<input type="text" name="guardian">
+
+<br><br>
+
+<label>
+<input type="checkbox" name="privacy" required>
+I agree to the Data Privacy Act of 2012.
+</label>
+
+<br><br>
+
+<label>
+<input type="checkbox" name="agreement" required>
+I agree to the terms and conditions stated above.
+</label>
 
 <h3>Digital Signature</h3>
 <div class="signature-container">
@@ -155,55 +219,43 @@ STRICTLY NO JUMPING.
 </div>
 
 <script>
-const canvas = document.getElementById('signature-pad');
-const signaturePad = new SignaturePad(canvas);
-const guestType = document.getElementById("guest_type");
-const roomSection = document.getElementById("room-section");
-const roomInput = document.getElementById("room-input");
+const canvas=document.getElementById('signature-pad');
+const signaturePad=new SignaturePad(canvas);
+const guestType=document.getElementById("guest_type");
+const roomSection=document.getElementById("room-section");
+const roomInput=document.getElementById("room-input");
 
-function resizeCanvas() {
-    const ratio = Math.max(window.devicePixelRatio || 1, 1);
-    canvas.width = canvas.offsetWidth * ratio;
-    canvas.height = 200 * ratio;
-    canvas.getContext("2d").scale(ratio, ratio);
-    signaturePad.clear();
+function resizeCanvas(){
+const ratio=Math.max(window.devicePixelRatio||1,1);
+canvas.width=canvas.offsetWidth*ratio;
+canvas.height=200*ratio;
+canvas.getContext("2d").scale(ratio,ratio);
+signaturePad.clear();
 }
-
-window.addEventListener("resize", resizeCanvas);
+window.addEventListener("resize",resizeCanvas);
 resizeCanvas();
 
-// Show/Hide Room Number based on Guest Type
-guestType.addEventListener("change", function() {
-    if (this.value === "In-House") {
-        roomSection.style.display = "block";
-        roomInput.setAttribute("required", "required");
-    } else {
-        roomSection.style.display = "none";
-        roomInput.removeAttribute("required");
-        roomInput.value = "";
-    }
+guestType.addEventListener("change",function(){
+if(this.value==="In-House"){
+roomSection.style.display="block";
+roomInput.setAttribute("required","required");
+}else{
+roomSection.style.display="none";
+roomInput.removeAttribute("required");
+roomInput.value="";
+}
 });
 
-// Clear signature
-function clearSignature() {
-    signaturePad.clear();
+function clearSignature(){signaturePad.clear();}
+
+document.getElementById("waiverForm").addEventListener("submit",function(e){
+if(signaturePad.isEmpty()){
+alert("Please provide your digital signature.");
+e.preventDefault();
+return;
 }
-
-// Submit validation + timestamp capture
-document.getElementById("waiverForm").addEventListener("submit", function(e) {
-
-    if (signaturePad.isEmpty()) {
-        alert("Please provide your digital signature.");
-        e.preventDefault();
-        return;
-    }
-
-    // Save signature
-    document.getElementById("signature-data").value = signaturePad.toDataURL();
-
-    // Capture timestamp (device local time)
-    const now = new Date();
-    document.getElementById("timestamp").value = now.toLocaleString();
+document.getElementById("signature-data").value=signaturePad.toDataURL();
+document.getElementById("timestamp").value=new Date().toLocaleString();
 });
 </script>
 

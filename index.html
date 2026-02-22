@@ -11,13 +11,6 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
-    background-color: #f2f6fb;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
     padding: 15px;
     background-color: #f2f6fb;
 }
@@ -237,18 +230,18 @@ I understand that this document is correct and that I thoroughly and fully under
 
 <label>Guest Type:</label><br>
 <select name="guest_type" id="guest_type" required>
-    <option value="">Select Guest Type</option>
     <option value="In-House">In-House Guest</option>
     <option value="Day-Use">Day Use Guest</option>
-    <option value="Walk-In">Walk-In / Outside Guest</option>
 </select>
 
 <br><br>
 
 
 
-<label>Room Number (Required for In-House Guests Only):</label><br>
-<input type="text" name="room" id="room-input" pattern="[0-9]+" inputmode="numeric">
+<div id="room-container">
+    <label>Room Number (Required for In-House Guests Only):</label><br>
+    <input type="text" name="room" id="room-input" pattern="[0-9]+" inputmode="numeric">
+</div>
 
 
 <h3>Participants Name</h3>
@@ -406,6 +399,32 @@ resizeCanvas();
 function clearSignature() {
     signaturePad.clear();
 }
+
+/* ===========================
+   ROOM SHOW / HIDE LOGIC
+=========================== */
+
+const guestType = document.getElementById("guest_type");
+const roomContainer = document.getElementById("room-container");
+const roomInput = document.getElementById("room-input");
+
+function toggleRoomField() {
+    if (guestType.value === "In-House") {
+        roomContainer.style.display = "block";
+        roomInput.required = true;
+    } else {
+        roomContainer.style.display = "none";
+        roomInput.required = false;
+        roomInput.value = "";
+    }
+}
+
+guestType.addEventListener("change", toggleRoomField);
+toggleRoomField();
+
+/* ===========================
+   FORM SUBMIT
+=========================== */
 
 document.getElementById("waiverForm").addEventListener("submit", function(e) {
     if (signaturePad.isEmpty()) {

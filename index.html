@@ -11,6 +11,13 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding: 20px;
+    background-color: #f2f6fb;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
     padding: 15px;
     background-color: #f2f6fb;
 }
@@ -29,88 +36,147 @@ body::before {
 
 .container {
     max-width: 950px;
-    background: rgba(255,255,255,0.95);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
     padding: 25px;
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.08);
 }
 
-h1,h2{text-align:center;margin:0;}
-h1{font-size:22px;}
-h2{font-size:18px;}
-
-.notice{
-    background:#fff3cd;
-    padding:12px;
-    border-left:5px solid #ffc107;
-    margin:20px 0;
-    font-weight:bold;
-    text-align:center;
+/* HEADINGS */
+h1, h2 {
+    text-align: center;
+    margin: 0;
 }
 
-.rules{
-    color:red;
-    font-weight:bold;
-    text-align:center;
-    margin-bottom:20px;
+h1 { font-size: 22px; }
+h2 { font-size: 18px; }
+
+/* NOTICE + RULES */
+.notice {
+    background: #fff3cd;
+    padding: 12px;
+    border-left: 5px solid #ffc107;
+    margin: 20px 0;
+    font-weight: bold;
+    text-align: center;
 }
 
-.waiver-text{
-    font-size:14px;
-    line-height:1.8;
-    text-align:justify;
-    margin-bottom:25px;
+.rules {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-input[type="text"], select{
-    width:100%;
-    padding:10px;
-    border-radius:5px;
-    border:1px solid #ccc;
-    box-sizing:border-box;
+/* WAIVER TEXT */
+.waiver-text {
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 25px;
 }
 
-#guest_type,#room-input{
-    width:300px;
-    max-width:100%;
+.abc-section {
+    margin-left: 20px;
 }
 
-.name-grid{
-    display:flex;
-    gap:15px;
+.abc-section p {
+    text-indent: -15px;
+    margin-left: 15px;
 }
 
-.name-field{flex:1;}
+/* INPUTS */
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 
-.participant-row{margin-bottom:20px;}
-
-.signature-container{
-    border:2px solid #ccc;
-    border-radius:5px;
-    margin-top:10px;
+}
+#guest_type,
+#room-input {
+    width: 300px;
+    max-width: 100%;
 }
 
-canvas{width:100%;height:180px;}
 
-button{
-    background:#007bff;
-    color:white;
-    padding:14px;
-    border:none;
-    border-radius:5px;
-    width:100%;
-    font-size:16px;
-    cursor:pointer;
+/* GRID FOR NAMES */
+.name-grid {
+    display: flex;
+    gap: 15px;
+    width: 100%;
 }
 
-button:hover{background:#0056b3;}
-
-.clear-btn{background:#dc3545;margin-top:10px;}
-
-@media(max-width:768px){
-    .name-grid{flex-direction:column;}
+.name-field {
+    flex: 1;
 }
+.participant-row label {
+    display: block;
+    margin-bottom: 12px;
+}
+.participant-row {
+    margin-bottom: 20px;
+}
+
+
+
+
+/* SIGNATURE */
+.signature-container {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+canvas {
+    width: 100%;
+    height: 180px;
+}
+
+/* BUTTONS */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.clear-btn {
+    background-color: #dc3545;
+    margin-top: 10px;
+}
+
+/* ---------- MOBILE ADJUSTMENTS ---------- */
+@media (max-width: 768px) {
+
+    .container {
+        padding: 18px;
+    }
+
+    h1 { font-size: 18px; }
+    h2 { font-size: 15px; }
+
+    .waiver-text {
+        font-size: 13px;
+    }
+
+    canvas {
+        height: 160px;
+    }
+}
+
 </style>
 </head>
 
@@ -132,75 +198,178 @@ STRICTLY NO JUMPING.
 </div>
 
 <div class="waiver-text">
-<p>In consideration of being allowed to enter and participate at LAGOON WATERPARKS, I acknowledge and agree to assume all risks associated with the activities and voluntarily waive any claims against the Resort for injuries or accidents that may occur.</p>
-<p>I agree to follow all safety instructions provided. Failure to comply may result in accidents or removal from the facility.</p>
-<p>I certify that I am over 18 years old or am the legal guardian of the minor/s listed below and fully understand the terms of this waiver.</p>
+
+<p>
+In consideration of being allowed to enter into the play area/or participate in any parties at the LAGOON WATERPARKS, the undersigned, on his or her own and on her behalf of the minor identified below, acknowledges, appreciate and agrees that:
+</p>
+
+<p>
+I, for myself, my child or ward sign this Waiver and Assumption of Risk in consideration of the opportunity to use the facility, or to participate in any parties or activities at LAGOON WATERPARKS.
+</p>
+
+<p>
+I, for myself, my child or ward acknowledge and undersigned that there are dangers and risk associated with the activities at/by lagoon waterparks and agree to assume all risk of personal injury.
+</p>
+
+<p>
+I, for myself, my child or ward agree to follow the safety instruction provided and acknowledge that failure to do so may result into accident.
+</p>
+
+<div class="abc-section">
+<p><strong>A.</strong> The resort shall not in any way be held liable for injuries and or accidents that may occur.</p>
+<p><strong>B.</strong> The resort shall be held free and harmless from any liability or damage or injury to the third party who may be occasioned by my intentional and negligent.</p>
+<p><strong>C.</strong> In view of a potential but known danger, I expressly agree to accept a potential risk or harm upon myself and hereby undertake to waive the renounce any claim against the Resort for any accident/s that may come to me during the entire time. I hereby agree that venue for court action shall be in proper courts of Cebu City, exclusively to the exclusion of all other courts.</p>
 </div>
 
-<form id="waiverForm" action="YOUR_GOOGLE_SCRIPT_URL_HERE" method="POST">
+<p>
+I hereby certify that I am over 18years of age; I have carefully read the foregoing covenant not to sue and acknowledge that I understand and agree to all of the above terms and condition. Prior to signing this agreement, I have the opportunity to ask any and all question. I am aware that by signing this, I assume all risks and waive and release all substantial rights I may have and possess.
+</p>
+
+<p>
+I understand that this document is correct and that I thoroughly and fully understand the terms.
+</p>
+
+</div>
+
+<!-- FORM BELOW REMAINS SAME -->
+
+<form id="waiverForm" action="https://script.google.com/macros/s/AKfycbxPrMwxryqkpNtZypaFWWLvRfEor2HSA2f40kefIzFaRVQUokT1Mdiw_Br0K49pXYUgFA/exec" method="POST">
 
 <label>Guest Type:</label><br>
 <select name="guest_type" id="guest_type" required>
-<option value="">Select Guest Type</option>
-<option value="In-House">In-House Guest</option>
-<option value="Day-Use">Day Use Guest</option>
+    <option value="">Select Guest Type</option>
+    <option value="In-House">In-House Guest</option>
+    <option value="Day-Use">Day Use Guest</option>
+    <option value="Walk-In">Walk-In / Outside Guest</option>
 </select>
-
-<div id="room-section" style="display:none;margin-top:15px;">
-<label>Room Number:</label><br>
-<input type="text" name="room" id="room-input" pattern="[0-9]+" inputmode="numeric">
-</div>
-
-<h3>Participants Name</h3>
-
-<div class="participant-row">
-<label>Participant 1</label>
-<div class="name-grid">
-<div class="name-field"><input type="text" name="p1_first"><small>First Name</small></div>
-<div class="name-field"><input type="text" name="p1_last"><small>Last Name</small></div>
-</div>
-</div>
-
-<div class="participant-row">
-<label>Participant 2</label>
-<div class="name-grid">
-<div class="name-field"><input type="text" name="p2_first"></div>
-<div class="name-field"><input type="text" name="p2_last"></div>
-</div>
-</div>
-
-<div class="participant-row">
-<label>Participant 3</label>
-<div class="name-grid">
-<div class="name-field"><input type="text" name="p3_first"></div>
-<div class="name-field"><input type="text" name="p3_last"></div>
-</div>
-</div>
-
-<div class="participant-row">
-<label>Participant 4</label>
-<div class="name-grid">
-<div class="name-field"><input type="text" name="p4_first"></div>
-<div class="name-field"><input type="text" name="p4_last"></div>
-</div>
-</div>
-
-<h3>Parent/Guardian (If Minor)</h3>
-<input type="text" name="guardian">
 
 <br><br>
 
+
+
+<label>Room Number (Required for In-House Guests Only):</label><br>
+<input type="text" name="room" id="room-input" pattern="[0-9]+" inputmode="numeric">
+
+
+<h3>Participants Name</h3>
+
+<!-- Participant 1 -->
+<div class="participant-row">
+<label>Participant 1</label>
+<div class="name-grid">
+<div class="name-field">
+<input type="text" name="p1_first">
+<small>First Name</small>
+</div>
+
+<div class="name-field">
+<input type="text" name="p1_last">
+<small>Last Name</small>
+</div>
+
+</div>
+</div>
+
+<!-- Participant 2 -->
+<div class="participant-row">
+<label>Participant 2</label>
+<div class="name-grid">
+<div class="name-field">
+<input type="text" name="p2_first">
+<small>First Name</small>
+</div>
+<div class="name-field">
+<input type="text" name="p2_last">
+<small>Last Name</small>
+</div>
+</div>
+</div>
+
+<!-- Participant 3 -->
+<div class="participant-row">
+<label>Participant 3</label>
+<div class="name-grid">
+<div class="name-field">
+<input type="text" name="p3_first">
+<small>First Name</small>
+</div>
+<div class="name-field">
+<input type="text" name="p3_last">
+<small>Last Name</small>
+</div>
+</div>
+</div>
+
+<!-- Participant 4 -->
+<div class="participant-row">
+<label>Participant 4</label>
+<div class="name-grid">
+<div class="name-field">
+<input type="text" name="p4_first">
+<small>First Name</small>
+</div>
+<div class="name-field">
+<input type="text" name="p4_last">
+<small>Last Name</small>
+</div>
+</div>
+</div>
+
+<br>
+
+<br>
+
+
+<h3>Parent/Guardian of Child (If Minor)</h3>
+
+<p style="font-size:13px; margin-top:-10px;">
+(Required only if any participant is under 18 years old)
+</p>
+
+<div class="participant-row">
+    <label>Full Name</label><br>
+    <input type="text" name="guardian" style="width:300px; padding:8px; border-radius:5px; border:1px solid #ccc;">
+</div>
+
+
+
+
+<br><br>
+
+<p><strong>DATA PRIVACY CONSENT</strong></p>
+
+<p style="font-size:13px; line-height:1.7;">
+In compliance with Republic Act No. 10173, otherwise known as the Data Privacy Act of 2012, I hereby voluntarily and expressly authorize SOLEA MACTAN CEBU RESORT to collect, record, organize, store, update, retrieve, use, consolidate, block, erase, or destroy my personal information provided in this form.
+</p>
+
+<p style="font-size:13px; line-height:1.7;">
+The personal information collected shall be used strictly for legitimate business purposes including safety documentation, incident reporting, guest verification, legal compliance, internal record-keeping, and security monitoring within the premises of the Resort.
+</p>
+
+<p style="font-size:13px; line-height:1.7;">
+I understand that my personal information will be treated with strict confidentiality and will only be accessed by authorized personnel of the Resort. My information shall not be disclosed, shared, or transferred to any third party without my consent except when required by law, regulation, or lawful order of government authorities.
+</p>
+
+<p style="font-size:13px; line-height:1.7;">
+I acknowledge that I have the right to access, correct, update, or request the deletion of my personal data, as well as the right to withdraw my consent, subject to applicable laws and internal policies of the Resort.
+</p>
+
+<br>
+
 <label>
-<input type="checkbox" name="privacy" required>
-I agree to the Data Privacy Act of 2012.
+<input type="checkbox" name="privacy_consent" required>
+I have read, understood, and voluntarily agree to the collection and processing of my personal data in accordance with the Data Privacy Act of 2012.
 </label>
 
 <br><br>
 
 <label>
 <input type="checkbox" name="agreement" required>
-I agree to the terms and conditions stated above.
+I have carefully read, fully understood, and voluntarily agree to the terms and conditions stated in this Lagoon Waterparks Waiver and Assumption of Risk. I acknowledge that by checking this box and signing below, I am waiving certain legal rights.
 </label>
+
+
+<br><br>
 
 <h3>Digital Signature</h3>
 <div class="signature-container">
@@ -210,52 +379,41 @@ I agree to the terms and conditions stated above.
 <button type="button" class="clear-btn" onclick="clearSignature()">Clear Signature</button>
 
 <input type="hidden" name="signature" id="signature-data">
-<input type="hidden" name="timestamp" id="timestamp">
 
 <br><br>
+
 <button type="submit">Submit Waiver</button>
 
 </form>
+
 </div>
 
 <script>
-const canvas=document.getElementById('signature-pad');
-const signaturePad=new SignaturePad(canvas);
-const guestType=document.getElementById("guest_type");
-const roomSection=document.getElementById("room-section");
-const roomInput=document.getElementById("room-input");
+const canvas = document.getElementById('signature-pad');
+const signaturePad = new SignaturePad(canvas);
 
-function resizeCanvas(){
-const ratio=Math.max(window.devicePixelRatio||1,1);
-canvas.width=canvas.offsetWidth*ratio;
-canvas.height=200*ratio;
-canvas.getContext("2d").scale(ratio,ratio);
-signaturePad.clear();
+function resizeCanvas() {
+    const ratio = Math.max(window.devicePixelRatio || 1, 1);
+    canvas.width = canvas.offsetWidth * ratio;
+    canvas.height = 200 * ratio;
+    canvas.getContext("2d").scale(ratio, ratio);
+    signaturePad.clear();
 }
-window.addEventListener("resize",resizeCanvas);
+
+window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 
-guestType.addEventListener("change",function(){
-if(this.value==="In-House"){
-roomSection.style.display="block";
-roomInput.setAttribute("required","required");
-}else{
-roomSection.style.display="none";
-roomInput.removeAttribute("required");
-roomInput.value="";
+function clearSignature() {
+    signaturePad.clear();
 }
-});
 
-function clearSignature(){signaturePad.clear();}
-
-document.getElementById("waiverForm").addEventListener("submit",function(e){
-if(signaturePad.isEmpty()){
-alert("Please provide your digital signature.");
-e.preventDefault();
-return;
-}
-document.getElementById("signature-data").value=signaturePad.toDataURL();
-document.getElementById("timestamp").value=new Date().toLocaleString();
+document.getElementById("waiverForm").addEventListener("submit", function(e) {
+    if (signaturePad.isEmpty()) {
+        alert("Please provide your digital signature.");
+        e.preventDefault();
+        return;
+    }
+    document.getElementById("signature-data").value = signaturePad.toDataURL();
 });
 </script>
 
